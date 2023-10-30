@@ -22,4 +22,4 @@ app.MapRazorPages();
 
 app.Run();
 
-Pizza pizza = new Pizza("Big", 1, "Tomat, Ost", 100);
+}
