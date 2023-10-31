@@ -7,7 +7,7 @@
         public string Name { get; set; }
         public BunType Bun { get; set; }
         public double Price { get; set; }
-        public string Description { get; set; }
+        public List <string> Description = new List <string> ();
             
 
         //default constructor
@@ -17,18 +17,16 @@
                 Name = "";
                 Bun = BunType.Fuldkorn;
                 Price = 0;
-                Description = "";
-
-        }
+            }
 
         //Constructor
-        public Burger(int number, string name, BunType type, double price, string description)
+        public Burger(int number, string name, BunType type, double price, List<string> description)
         {
             Number = number;
             Name = name;
             Bun = type;
             Price = price;
-            Description = description;
+            Description = description; 
 
         }
 
