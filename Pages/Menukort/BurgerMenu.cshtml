@@ -1,4 +1,34 @@
 ﻿@page
+@using mini_big_mammas_pizzaria.Model;
 @model mini_big_mammas_pizzaria.Pages.Menukort.BurgerMenuModel
+
 @{
+    ViewData["Title"] = "Burger";
 }
+
+<h1 class="jumbotron">Burger Menu</h1>
+
+<table class="table-hover">
+    <thead>
+        <tr>
+            <th>nummer</th>
+            <th>Navn</th>
+            <th>Beskrivelse</th>
+            <th>pris</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (Burger b in Model.BurgerMenukort)
+        {
+            <tr>
+                <td>@b.Number</td>
+                <td>@b.Name</td>
+                <td>@b.Description</td>
+                <td>@b.Price</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<p>That was it</p>
