@@ -11,7 +11,7 @@ namespace mini_big_mammas_pizzaria.Services
         //constructor
         public PizzaRepository()
         {
-            PopulateRepository();
+            PopulatePizzaRepository();
         }
 
         //Methods

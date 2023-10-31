@@ -47,18 +47,18 @@
             return topping;
         }
 
-        public override string ToString()
-        {
-            return $"{{{nameof(Name)}={Name}, {nameof(Number)}={Number.ToString()}, {nameof(Price)}={Price.ToString()}, {nameof(GetToppings)}={GetToppings().ToString()}}}";
-        }
+        //public override string ToString()
+        //{
+        //    return $"{{{nameof(Name)}={Name}, {nameof(Number)}={Number.ToString()}, {nameof(Price)}={Price.ToString()}, {nameof(GetToppings)}={GetToppings().ToString()}}}";
+        //}
 
-        /*
+        
         public override string ToString()
         {
 
             return $"[{Number}, {Price}kr. {Name}, {GetToppings()}]";
         }
-        */
+        
 
         /*
         Pizza pizza1 = new Pizza(1, 69, "Margherita", ["tomato", "cheese"]);

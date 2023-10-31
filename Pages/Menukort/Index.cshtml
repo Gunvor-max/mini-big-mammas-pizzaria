@@ -2,33 +2,7 @@
 @using mini_big_mammas_pizzaria.Model;
 @model mini_big_mammas_pizzaria.Pages.Menukort.IndexModel
 @{
-    ViewData["Title"] = "Pizzaer";
+    ViewData["Title"] = "Big Mamma Pizzaria";
 }
 
-<h1 class="jumbotron">Oversigt over Pizzaer</h1>
-
-<table class="table-hover">
-    <thead>
-        <tr>
-            <th>Nummer</th>
-            <th>Navn</th>
-            <th>Beskrivelse</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (Pizza p in Model.)
-        {
-            <tr>
-                <td>@k.</td>
-                <td>@k.Navn</td>
-                <td>@k.Tlf</td>
-
-            </tr>
-        }
-    </tbody>
-</table>
-
-<form method="post">
-    <input type="submit" value="opret" />
-</form>
-<p>That was it</p>
+<h1 class="jumbotron">Welcome to Big Mamma Pizzaria!</h1>
