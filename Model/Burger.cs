@@ -36,11 +36,20 @@
             return Price * 1.25;
         }
 
+        public string GetToppings()
+        {
+            string topping = "";
+            foreach (string top in Description)
+            {
+                topping += top + ", ";
+            }
+            return topping;
+        }
 
         //Tostring
         public override string ToString()
         {
-            return $"{{{nameof(Number)}={Number.ToString()}, {nameof(Name)}={Name}, {nameof(Bun)}={Bun.ToString()}, {nameof(Price)}={Price.ToString()}, {nameof(Description)}={Description}}}";
+            return $"{{{nameof(Number)}={Number.ToString()}, {nameof(Name)}={Name}, {nameof(Bun)}={Bun.ToString()}, {nameof(Price)}={Price.ToString()}, {nameof(GetToppings)}={GetToppings()}}}";
         }
 
 
