@@ -28,4 +28,3 @@ internal class Program
     }
 }
 
-// Sebastian skriver...

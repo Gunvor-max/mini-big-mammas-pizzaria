@@ -15,7 +15,6 @@
             Name = "";
             Number = 0;
             Price = 0;
-            Toppings = [];
 
         }
         //Constructor
