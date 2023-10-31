@@ -1,4 +1,33 @@
 ﻿@page
 @model mini_big_mammas_pizzaria.Pages.Menukort.PizzaMenuModel
 @{
+    ViewData["Title"] = "Kunder";
 }
+
+<h1 class="jumbotron">Vis alle kunder</h1>
+
+<table class="table-hover">
+    <thead>
+        <tr>
+            <th>Kunde nummer</th>
+            <th>Navn</th>
+            <th>Telfonnummer</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Kunde k in Model.Kunder)
+        {
+            <tr>
+                <td>@k.KundeNummer</td>
+                <td>@k.Navn</td>
+                <td>@k.Tlf</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<form method="post">
+    <input type="submit" value="opret" />
+</form>
+<p>That was it</p>
