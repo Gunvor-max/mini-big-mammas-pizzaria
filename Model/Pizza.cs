@@ -10,12 +10,12 @@
         public List<string> Toppings = new List<string>();
         int Standard;
 
+
         public Pizza()
         {
             Name = "";
             Number = 0;
             Price = 0;
-
         }
         //Constructor
         public Pizza(int number, double price, string name, List<string>topping)
@@ -25,7 +25,6 @@
             Name = name;
             Toppings = topping;
             Standard = topping.Count;
-
         }
         public double CalculateTotalPrice()
         {
@@ -50,8 +49,10 @@
         public override string ToString()
         {
 
-            return $"[{Name}, {Number}, {Price}kr. {GetToppings()}]";
+            return $"[{Number}, {Price}kr. {Name}, {GetToppings()}]";
         }
+
+
         /*
         Pizza pizza1 = new Pizza(1, 69, "Margherita", ["tomato", "cheese"]);
         Pizza pizza2 = new Pizza(2, 75, "Vesuvio", ["tomato", "cheese", "ham"]);
