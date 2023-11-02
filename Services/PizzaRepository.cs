@@ -5,12 +5,16 @@ namespace mini_big_mammas_pizzaria.Services
 {
     public class PizzaRepository
     {
+        //instance fields 
+        public Dictionary<int, Pizza> _menukort;
+
         //property
-        public Dictionary<int, Pizza> Menukort = new Dictionary<int, Pizza>();
+        public Dictionary<int, Pizza> Menukort { get; set; }
 
         //constructor
         public PizzaRepository()
         {
+            _menukort = new Dictionary<int, Pizza>();
             PopulatePizzaRepository();
         }
 
@@ -53,10 +57,10 @@ namespace mini_big_mammas_pizzaria.Services
             }
         }
 
-        public Pizza AddItem(int number, string name, double price, List<string> topping) 
+        public Pizza AddItem(Pizza pizza /*int number, string name, double price, List<string> topping*/) 
         {
-            Menukort.Add(number, new Pizza(number, name, price, topping));
-            return Menukort[number];
+            Menukort.Add(pizza.Number, pizza/*number, new Pizza(number, name, price, topping*/);
+            return pizza /*Menukort[number]*/;
         }
 
         public List<Pizza> GetAllItems()

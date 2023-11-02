@@ -28,6 +28,8 @@ internal class Program
         app.Run();
 
         builder.Services.AddSingleton<Menucard>(new Menucard());
+
+        builder.Services.AddSingleton<PizzaRepository>(new PizzaRepository());
     }
 }
 
