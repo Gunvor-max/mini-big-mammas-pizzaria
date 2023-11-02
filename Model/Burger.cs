@@ -30,7 +30,7 @@
             string topping = "";
             foreach (string top in Description)
             {
-                topping += top == Description[Description.Count-1] ? top + ", " : top;
+                topping += top == Description[Description.Count-1] ? top : top + ", ";
             }
             return topping;
         }
