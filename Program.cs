@@ -27,14 +27,7 @@ internal class Program
 
         app.Run();
 
-        builder.Services.AddSingleton<Menukort>(new Menukort());
-
-        Menukort menukort = new Menukort();
-        Pizza pizza = new Pizza();
-        menukort.AddPizza(pizza);
-        Console.WriteLine(pizza);
-        Console.WriteLine(menukort);
-        
+        builder.Services.AddSingleton<Menucard>(new Menucard());
     }
 }
 

@@ -9,13 +9,12 @@ namespace mini_big_mammas_pizzaria.Services
         {
             PopulateBurgerRepository();
         }
-        public Dictionary<int, Burger> PopulateBurgerRepository()
+        public void PopulateBurgerRepository()
         {
             Menukort.Clear();
             Menukort.Add(1, new Burger(1, "Big Mac", 40, BunType.Ciabatta, ["tomato"]));
             Menukort.Add(2, new Burger(2, "Tasty Cheese", 25, BunType.Ciabatta, ["cheese"]));
-            Menukort.Add(3, new Burger(3, "Hamburger", 40, BunType.Ciabatta, ["ham"]));
-            return Menukort;
+            Menukort.Add(3, new Burger(3, "Hamburger", 25, BunType.Ciabatta, ["ham"]));
         }
 
         public Burger DeleteItem(int burger)

@@ -15,7 +15,7 @@ namespace mini_big_mammas_pizzaria.Services
         }
 
         //Methods
-        public Dictionary<int, Pizza> PopulatePizzaRepository()
+        public void PopulatePizzaRepository()
         {
             Menukort.Clear();
             Menukort.Add(1, new Pizza(1, "Margherita", 69, ["tomato", "cheese"]));
@@ -37,7 +37,6 @@ namespace mini_big_mammas_pizzaria.Services
             Menukort.Add(17, new Pizza(17, "Romana", 78, ["tomato", "cheese", "ham", "bacon", "onion"]));
             Menukort.Add(18, new Pizza(18, "Sole", 78, ["tomato", "cheese", "ham", "bacon", "eggs"]));
             Menukort.Add(19, new Pizza(19, "Big Mamma", 90, ["tomato", "gorgonzola", "shrimp", "asparagus", "parma ham"]));
-            return Menukort;
         }
 
         public Pizza DeleteItem(int pizza)
@@ -54,7 +53,7 @@ namespace mini_big_mammas_pizzaria.Services
             }
         }
 
-        public Pizza AddItem(int number, double price, string name, List<string> topping) 
+        public Pizza AddItem(int number, string name, double price, List<string> topping) 
         {
             Menukort.Add(number, new Pizza(number, name, price, topping));
             return Menukort[number];
