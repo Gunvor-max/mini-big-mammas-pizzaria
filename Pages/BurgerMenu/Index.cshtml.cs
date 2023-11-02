@@ -1,10 +1,9 @@
-using mini_big_mammas_pizzaria;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using mini_big_mammas_pizzaria.Model;
 using mini_big_mammas_pizzaria.Services;
 
-namespace mini_big_mammas_pizzaria.Pages.Menukort
+namespace mini_big_mammas_pizzaria.Pages.BurgerMenu
 {
     public class BurgerMenuModel : PageModel
     {
