@@ -12,9 +12,9 @@ namespace mini_big_mammas_pizzaria.Services
         public Dictionary<int, Burger> PopulateBurgerRepository()
         {
             Menukort.Clear();
-            Menukort.Add(1, new Burger(1, "Big Mac", BunType.Ciabatta, 40, ["tomato"]));
-            Menukort.Add(2, new Burger(2, "Tasty Cheese", BunType.Ciabatta, 25, ["cheese"]));
-            Menukort.Add(3, new Burger(3, "Hamburger", BunType.Ciabatta, 40, ["ham"]));
+            Menukort.Add(1, new Burger(1, "Big Mac", 40, BunType.Ciabatta, ["tomato"]));
+            Menukort.Add(2, new Burger(2, "Tasty Cheese", 25, BunType.Ciabatta, ["cheese"]));
+            Menukort.Add(3, new Burger(3, "Hamburger", 40, BunType.Ciabatta, ["ham"]));
             return Menukort;
         }
 
@@ -35,7 +35,7 @@ namespace mini_big_mammas_pizzaria.Services
         public Burger AddItem(int number, string name, BunType type, double price, List<string> description)
         {
 
-            Menukort.Add(number, new Burger(number, name, type, price, description));
+            Menukort.Add(number, new Burger(number, name, price, type, description));
             return Menukort[number];
         }
 
