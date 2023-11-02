@@ -1,25 +1,20 @@
 ﻿namespace mini_big_mammas_pizzaria.Model
 {
-    public class Drinks
+    public class Drinks:Menuitems
     {
         //properties
-        public string Name { get; set; }
         
         public string Size { get; set; }
-        public double Price { get; set; }
+
         
         //constructor
         public Drinks()
         {
-            Name = "";
             Size = "";
-            Price = 0;
         }
-        public Drinks(string name, string size, double price)
+        public Drinks(int number, string name, double price, string size):base(number, name, price)
         {
-            Name = name;
             Size = size;
-            Price = price;
         }
 
         public override string ToString()

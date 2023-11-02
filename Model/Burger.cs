@@ -1,6 +1,6 @@
 ﻿namespace mini_big_mammas_pizzaria.Model
 {
-    public class Burger
+    public class Burger:Menuitems
     {
         //properties
         public int Number { get; set; }
@@ -12,20 +12,14 @@
 
         //default constructor
         public Burger()
-            {
-                Number = 0;
-                Name = "";
+            { 
                 Bun = BunType.Fuldkorn;
-                Price = 0;
             }
 
         //Constructor
-        public Burger(int number, string name, BunType type, double price, List<string> description)
+        public Burger(int number, string name, double price, BunType type, List<string> description):base(number, name, price)
         {
-            Number = number;
-            Name = name;
             Bun = type;
-            Price = price;
             Description = description; 
 
         }

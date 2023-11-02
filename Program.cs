@@ -1,4 +1,5 @@
 using mini_big_mammas_pizzaria.Model;
+using mini_big_mammas_pizzaria.Services;
 
 internal class Program
 {
@@ -25,6 +26,15 @@ internal class Program
         app.MapRazorPages();
 
         app.Run();
+
+        builder.Services.AddSingleton<Menukort>(new Menukort());
+
+        Menukort menukort = new Menukort();
+        Pizza pizza = new Pizza();
+        menukort.AddPizza(pizza);
+        Console.WriteLine(pizza);
+        Console.WriteLine(menukort);
+        
     }
 }
 

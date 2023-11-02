@@ -1,24 +1,20 @@
-﻿namespace mini_big_mammas_pizzaria.Model
+﻿using mini_big_mammas_pizzaria.Services;
+
+namespace mini_big_mammas_pizzaria.Model
 {
-    public class Pizza
+    public class Pizza:Menuitems
     {
         //Properties
-        public string Name { get; set; }
-        public int Number { get; set; }
-        public double Price { get; set; }
-        public bool Takeaway {  get; set; }
+
         public List<string> Toppings = new List<string>();
         int Standard;
 
 
         public Pizza()
         {
-            Name = "";
-            Number = 0;
-            Price = 0;
         }
         //Constructor
-        public Pizza(int number, double price, string name, List<string>topping)
+        public Pizza(int number, string name, double price, List<string>topping):base(number, name, price)
         {
             Number = number;
             Price = price;
@@ -29,7 +25,7 @@
         public double CalculateTotalPrice()
         {
             double price = (Price + (Toppings.Count-Standard) * 12) * 1.25;
-            return !Takeaway ? price : price + 40;
+            return true ? price : price + 40;
         }
         public string AddTopping(string topping)
         {

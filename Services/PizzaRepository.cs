@@ -18,25 +18,25 @@ namespace mini_big_mammas_pizzaria.Services
         public Dictionary<int, Pizza> PopulatePizzaRepository()
         {
             Menukort.Clear();
-            Menukort.Add(1, new Pizza(1, 69, "Margherita", ["tomato", "cheese"]));
-            Menukort.Add(2, new Pizza(2, 75, "Vesuvio", ["tomato", "cheese", "ham"]));
-            Menukort.Add(3, new Pizza(3, 80, "Capricciosa", ["tomato", "cheese", "ham", "mushrooms"]));
-            Menukort.Add(4, new Pizza(4, 80, "Calzone", ["baked pizza with tomat", "cheese", "ham", "mushrooms"]));
-            Menukort.Add(5, new Pizza(5, 85, "Quattro Stagioni", ["tomato", "cheese", "ham", "mushrooms", "shrimp", "peppers"]));
-            Menukort.Add(6, new Pizza(6, 85, "Marinara", ["tomato", "cheese", "shrimp", "mussels", "garlic"]));
-            Menukort.Add(7, new Pizza(7, 80, "Vegetatian", ["tomato", "cheese", "vegetables"]));
-            Menukort.Add(8, new Pizza(8, 75, "Italiana", ["tomato", "cheese", "onion", "meat sauce"]));
-            Menukort.Add(9, new Pizza(9, 85, "Gorgonzola", ["tomato", "gorgonzola", "onion", "mushroom"]));
-            Menukort.Add(10, new Pizza(10, 75, "Contadina", ["tomato", "cheese", "mushrooms", "olives"]));
-            Menukort.Add(11, new Pizza(11, 79, "Naples", ["tomato", "cheese", "anchovies", "olives"]));
-            Menukort.Add(12, new Pizza(12, 80, "Vichinga", ["tomato", "cheese", "ham", "mushrooms", "peppers", "garlic", "chili"]));
-            Menukort.Add(13, new Pizza(13, 80, "Calzone Special", ["tomato", "cheese", "shrimp", "ham", "meat sauce"]));
-            Menukort.Add(14, new Pizza(14, 80, "Esotica", ["tomato", "cheese", "ham", "shrimp", "pinapple"]));
-            Menukort.Add(15, new Pizza(15, 85, "Tonno", ["tomato", "cheese", "tuna", "shrimp"]));
-            Menukort.Add(16, new Pizza(16, 80, "Sardegna", ["tomato", "cheese", "cocktail sausages", "bacon", "onions", "eggs"]));
-            Menukort.Add(17, new Pizza(17, 78, "Romana", ["tomato", "cheese", "ham", "bacon", "onion"]));
-            Menukort.Add(18, new Pizza(18, 78, "Sole", ["tomato", "cheese", "ham", "bacon", "eggs"]));
-            Menukort.Add(19, new Pizza(19, 90, "Big Mamma", ["tomato", "gorgonzola", "shrimp", "asparagus", "parma ham"]));
+            Menukort.Add(1, new Pizza(1, "Margherita", 69, ["tomato", "cheese"]));
+            Menukort.Add(2, new Pizza(2, "Vesuvio", 75, ["tomato", "cheese", "ham"]));
+            Menukort.Add(3, new Pizza(3, "Capricciosa", 80, ["tomato", "cheese", "ham", "mushrooms"]));
+            Menukort.Add(4, new Pizza(4, "Calzone", 80, ["baked pizza with tomat", "cheese", "ham", "mushrooms"]));
+            Menukort.Add(5, new Pizza(5, "Quattro Stagioni", 85, ["tomato", "cheese", "ham", "mushrooms", "shrimp", "peppers"]));
+            Menukort.Add(6, new Pizza(6, "Marinara", 85, ["tomato", "cheese", "shrimp", "mussels", "garlic"]));
+            Menukort.Add(7, new Pizza(7, "Vegetatian", 80, ["tomato", "cheese", "vegetables"]));
+            Menukort.Add(8, new Pizza(8, "Italiana", 75, ["tomato", "cheese", "onion", "meat sauce"]));
+            Menukort.Add(9, new Pizza(9, "Gorgonzola", 85, ["tomato", "gorgonzola", "onion", "mushroom"]));
+            Menukort.Add(10, new Pizza(10, "Contadina", 75, ["tomato", "cheese", "mushrooms", "olives"]));
+            Menukort.Add(11, new Pizza(11, "Naples", 79, ["tomato", "cheese", "anchovies", "olives"]));
+            Menukort.Add(12, new Pizza(12, "Vichinga", 80, ["tomato", "cheese", "ham", "mushrooms", "peppers", "garlic", "chili"]));
+            Menukort.Add(13, new Pizza(13, "Calzone Special", 80, ["tomato", "cheese", "shrimp", "ham", "meat sauce"]));
+            Menukort.Add(14, new Pizza(14, "Esotica", 80, ["tomato", "cheese", "ham", "shrimp", "pinapple"]));
+            Menukort.Add(15, new Pizza(15, "Tonno", 85, ["tomato", "cheese", "tuna", "shrimp"]));
+            Menukort.Add(16, new Pizza(16, "Sardegna", 80, ["tomato", "cheese", "cocktail sausages", "bacon", "onions", "eggs"]));
+            Menukort.Add(17, new Pizza(17, "Romana", 78, ["tomato", "cheese", "ham", "bacon", "onion"]));
+            Menukort.Add(18, new Pizza(18, "Sole", 78, ["tomato", "cheese", "ham", "bacon", "eggs"]));
+            Menukort.Add(19, new Pizza(19, "Big Mamma", 90, ["tomato", "gorgonzola", "shrimp", "asparagus", "parma ham"]));
             return Menukort;
         }
 
@@ -56,7 +56,7 @@ namespace mini_big_mammas_pizzaria.Services
 
         public Pizza AddItem(int number, double price, string name, List<string> topping) 
         {
-            Menukort.Add(number, new Pizza(number, price, name, topping));
+            Menukort.Add(number, new Pizza(number, name, price, topping));
             return Menukort[number];
         }
 
