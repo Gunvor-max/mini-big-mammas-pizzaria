@@ -6,8 +6,8 @@ namespace mini_big_mammas_pizzaria.Services
 {
     public class Order
     {
-        public Customer Customer {  get; set; }
-        public List<Menuitems> Food = new List<Menuitems>();
+        private Customer Customer {  get; set; }
+        private List<Menuitems> Food = new List<Menuitems>();
         public bool TakeAway {  get; set; }
         public Order()
         {
@@ -28,12 +28,12 @@ namespace mini_big_mammas_pizzaria.Services
             }
             return TakeAway ? price + 40: price;
         }
-        private string GetFood()
+        public string GetFood()
         {
             string food = "";
                 foreach(Menuitems item in Food)
             {
-                food += item + " ";
+                food += item == Food[Food.Count-1] ? item : item + ", ";
             }
             return food;
         }
