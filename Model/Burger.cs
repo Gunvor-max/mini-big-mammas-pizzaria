@@ -3,10 +3,7 @@
     public class Burger:Menuitems
     {
         //properties
-        public int Number { get; set; }
-        public string Name { get; set; }
         public BunType Bun { get; set; }
-        public double Price { get; set; }
         public List <string> Description = new List <string> ();
             
 
@@ -21,21 +18,19 @@
         {
             Bun = type;
             Description = description; 
-
         }
-
-        //methods
-        public double PriceWithTaxes()
+        public string AddTopping(string topping)
         {
-            return Price * 1.25;
+            Description.Add(topping);
+            Price += 10;
+            return topping;
         }
-
         public string GetToppings()
         {
             string topping = "";
             foreach (string top in Description)
             {
-                topping += top + ", ";
+                topping += top == Description[Description.Count-1] ? top + ", " : top;
             }
             return topping;
         }

@@ -15,5 +15,10 @@
             Name = name;
             Tlf = tlf;
         }
+
+        public override string ToString()
+        {
+            return $"{{{nameof(Name)}={Name}, {nameof(Tlf)}={Tlf}}}";
+        }
     }
 }

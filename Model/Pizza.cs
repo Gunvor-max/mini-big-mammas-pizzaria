@@ -22,14 +22,11 @@ namespace mini_big_mammas_pizzaria.Model
             Toppings = topping;
             Standard = topping.Count;
         }
-        public double CalculateTotalPrice()
-        {
-            double price = (Price + (Toppings.Count-Standard) * 12) * 1.25;
-            return true ? price : price + 40;
-        }
+        
         public string AddTopping(string topping)
         {
             Toppings.Add(topping);
+            Price += 10;
             return topping;
         }
 
@@ -38,11 +35,11 @@ namespace mini_big_mammas_pizzaria.Model
             string topping = "";
             foreach (string top in Toppings)
             {
-                topping += top + ", ";
+                topping += top==Toppings[Toppings.Count-1] ? top : top + ", ";
             }
             return topping;
         }
-
+        
         //public override string ToString()
         //{
         //    return $"{{{nameof(Name)}={Name}, {nameof(Number)}={Number.ToString()}, {nameof(Price)}={Price.ToString()}, {nameof(GetToppings)}={GetToppings().ToString()}}}";
