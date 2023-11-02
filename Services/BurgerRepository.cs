@@ -12,7 +12,7 @@ namespace mini_big_mammas_pizzaria.Services
         public void PopulateBurgerRepository()
         {
             Menukort.Clear();
-            Menukort.Add(1, new Burger(1, "Big Mac", 40, BunType.Ciabatta, ["tomato"]));
+            Menukort.Add(1, new Burger(1, "Big Mac", 40, BunType.Ciabatta, ["tomato", "beef"]));
             Menukort.Add(2, new Burger(2, "Tasty Cheese", 25, BunType.Ciabatta, ["cheese"]));
             Menukort.Add(3, new Burger(3, "Hamburger", 25, BunType.Ciabatta, ["ham"]));
         }
