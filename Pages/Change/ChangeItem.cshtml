@@ -21,6 +21,7 @@
         <label>Pizza Topping</label><br />
         <input class="form-control" asp-for="@Model.NyDescription" /><br />
 
-        <input type="submit" value="Opret Ny Pizza" class="btn btn-success" />
+        <input type="submit" value="Ændre pizza" class="btn btn-success" asp-page-handler="Change" />
+        <input type="submit" value="Fortryd" class="btn btn-danger" asp-page-handler="Cancel" />
     </div>
 </form>

@@ -51,23 +51,41 @@ namespace mini_big_mammas_pizzaria.Pages.ChangeItem
             else if (item is Drinks) 
             {
                 Drinks d = item as Drinks;
-
             }
 
         }
-        public IActionResult OnPost()
+        public IActionResult OnPostChange()
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-            //Menucard nypizza = new Menucard();
-            //Pizza pizza = new Pizza();
-            Pizza newpizza = new Pizza(NytPizzaNummer, NytPizzaNavn, NyPris, [NyDescription]);
+            Menuitems item = _repo.SearchItem(NytPizzaNummer);
 
-            _repo.AddItem(newpizza);
+            item.Number = NytPizzaNummer;
+            item.Name = NytPizzaNavn;
+            item.Price = NyPris;
+            if (item is Pizza)
+            {
+                Pizza p = item as Pizza;
+                NyDescription = p.Toppings;
+            }
+            else if (item is Burger)
+            {
+                Burger b = item as Burger;
+                NyDescription = b.Description;
+            }
+            else if (item is Drinks)
+            {
+                Drinks d = item as Drinks;
+            }
 
-            return RedirectToPage("/PizzaMenu/Index");
+            return RedirectToPage("Index");
+        }
+
+        public IActionResult OnPostCancel()
+        {
+            return RedirectToPage("Index");
         }
     }
 }
