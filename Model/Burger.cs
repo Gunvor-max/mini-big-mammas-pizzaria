@@ -1,6 +1,6 @@
 ﻿namespace mini_big_mammas_pizzaria.Model
 {
-    public class Burger:Menuitems
+    public class Burger:Items
     {
         //properties
         public BunType Bun { get; set; }
@@ -14,7 +14,7 @@
             }
 
         //Constructor
-        public Burger(int number, string name, double price, BunType type, List<string> description):base(number, name, price)
+        public Burger(string name, double price, BunType type, List<string> description):base(name, price)
         {
             Bun = type;
             Description = description; 

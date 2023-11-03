@@ -8,12 +8,13 @@ namespace mini_big_mammas_pizzaria.Pages.DrikkevarerMenu
     public class DrinksMenuModel : PageModel
     {
 
-        public List<Drinks> DrinksMenukort { get; set; }
+        public List<Items> DrinksMenukort { get; set; }
 
         public void OnGet()
         {
-            DrinksRepository repo = new DrinksRepository();
-            DrinksMenukort = repo.GetAllItems();
+            Menucard repo = new Menucard();
+            DrinksMenukort = repo.GetAllDrinks();
+            repo.AddNumbers();
         }
     }
 }
