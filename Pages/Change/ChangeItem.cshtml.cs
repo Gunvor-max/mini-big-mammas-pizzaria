@@ -63,15 +63,14 @@ namespace mini_big_mammas_pizzaria.Pages.ChangeItem
             }
             Menuitems item = _repo.SearchItem(NytPizzaNummer);
 
-            item.Number = NytPizzaNummer;
-            item.Name = NytPizzaNavn;
-            item.Price = NyPris;
+            NytPizzaNummer = item.Number;
+            NytPizzaNavn = item.Name;
+            NyPris = item.Price;
             if (item is Pizza)
             {
                 Pizza p = item as Pizza;
+                p.Toppings = NyDescription.Split(",").ToList();
                 NyDescription = p.GetToppings();
-                List<string> result = NyDescription.Split(",").ToList();
-                p.Toppings = result;
             }
             else if (item is Burger)
             {
