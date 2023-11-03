@@ -25,7 +25,8 @@ namespace mini_big_mammas_pizzaria.Pages.Account
                 // creating the security context
                 var claims = new List<Claim> {
                     new Claim(ClaimTypes.Name, "admin"),
-                    new Claim(ClaimTypes.Email, "admin@mywebside.com")
+                    new Claim(ClaimTypes.Email, "admin@mywebside.com"),
+                    new Claim("Pizza", "Pi")
                     };
                 var identity = new ClaimsIdentity(claims, "MyCookieAuth");
                 ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);

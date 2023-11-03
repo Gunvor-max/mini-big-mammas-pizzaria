@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using mini_big_mammas_pizzaria.Model;
@@ -7,6 +8,7 @@ using System.Text;
 
 namespace mini_big_mammas_pizzaria.Pages.ChangeItem
 {
+    [Authorize(Policy = "Pizzaria")]
     public class ChangeItemModel : PageModel
     {
         public Menucard _repo;
