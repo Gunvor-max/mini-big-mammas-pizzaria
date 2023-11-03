@@ -10,6 +10,10 @@ internal class Program
         // Add services to the container.
         builder.Services.AddRazorPages();
 
+        //Indsætter pizzarepository
+        builder.Services.AddSingleton<PizzaRepository>(new PizzaRepository());
+        builder.Services.AddSingleton<Menucard>(new Menucard());
+
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
@@ -26,10 +30,6 @@ internal class Program
         app.MapRazorPages();
 
         app.Run();
-
-        builder.Services.AddSingleton<Menucard>(new Menucard());
-
-        builder.Services.AddSingleton<PizzaRepository>(new PizzaRepository());
     }
 }
 

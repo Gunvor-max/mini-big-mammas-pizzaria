@@ -5,8 +5,6 @@ namespace mini_big_mammas_pizzaria.Services
 {
     public class PizzaRepository
     {
-        //instance fields 
-        public Dictionary<int, Pizza> _menukort;
 
         //property
         public Dictionary<int, Pizza> Menukort { get; set; }
@@ -14,7 +12,7 @@ namespace mini_big_mammas_pizzaria.Services
         //constructor
         public PizzaRepository()
         {
-            _menukort = new Dictionary<int, Pizza>();
+            Menukort = new Dictionary<int, Pizza>();
             PopulatePizzaRepository();
         }
 

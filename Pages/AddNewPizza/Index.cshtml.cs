@@ -9,7 +9,7 @@ namespace mini_big_mammas_pizzaria.Pages.AddNewPizza
 {
     public class IndexModel : PageModel
     {
-        public I PizzaRepository _repo;
+        public PizzaRepository _repo;
 
         public IndexModel(PizzaRepository repo)
         {
@@ -40,12 +40,13 @@ namespace mini_big_mammas_pizzaria.Pages.AddNewPizza
             {
                 return Page();
             }
-            Menucard nypizza = new Menucard();
-            Pizza pizza = new Pizza();
+            //Menucard nypizza = new Menucard();
+            //Pizza pizza = new Pizza();
+            Pizza newpizza = new Pizza(NytPizzaNummer, NytPizzaNavn, NyPris, [NyDescription]);
 
-            nypizza.AddItem(pizza);
+            _repo.AddItem(newpizza);
 
-            return RedirectToPage("PizzaMenu/Index");
+            return RedirectToPage("/PizzaMenu/Index");
         }
     }
 }
