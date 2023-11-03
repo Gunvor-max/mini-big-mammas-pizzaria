@@ -13,6 +13,10 @@ public class DrinksRepository
     {
         PopulateDrinksRepository();
     }
+    public List<Drinks> GetAllItems()
+    {
+        return Menukort.Values.ToList();
+    }
 
     private void PopulateDrinksRepository()
     {
