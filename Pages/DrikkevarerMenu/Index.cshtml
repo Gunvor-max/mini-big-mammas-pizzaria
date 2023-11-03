@@ -6,26 +6,23 @@
     ViewData["Title"] = "Drikkevarer";
 }
 
-<h1 class="jumbotron">Burger Menu</h1>
+<h1 class="jumbotron">Drinks</h1>
 
 <table class="table-hover">
     <thead>
         <tr>
             <th>nummer</th>
             <th>Navn</th>
-            <th>Buntype</th>
-            <th>Beskrivelse</th>
             <th>pris</th>
         </tr>
     </thead>
     <tbody>
 
-        @foreach (Drinks b in Model.)
+        @foreach (Drinks b in Model.DrinksMenukort)
         {
             <tr>
                 <td>@b.Number</td>
                 <td>@b.Name</td>
-                <td>@b.GetToppings()</td>
                 <td>@b.Price</td>
 
             </tr>

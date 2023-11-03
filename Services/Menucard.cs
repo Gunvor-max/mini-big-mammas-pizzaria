@@ -41,13 +41,13 @@ namespace mini_big_mammas_pizzaria.Services
         public void PopulateBurgerRepository()
         {
             Menu.Clear();
-            Menu.Add(1, new Burger(1, "Big Mac", 40, BunType.Ciabatta, ["tomato", "beef"]));
-            Menu.Add(2, new Burger(2, "Tasty Cheese", 25, BunType.Ciabatta, ["cheese"]));
-            Menu.Add(3, new Burger(3, "Hamburger", 25, BunType.Ciabatta, ["ham"]));
+            Menu.Add(21, new Burger(21, "Big Mac", 40, BunType.Ciabatta, ["tomato", "beef"]));
+            Menu.Add(23, new Burger(23, "Tasty Cheese", 25, BunType.Ciabatta, ["cheese"]));
+            Menu.Add(24, new Burger(24, "Hamburger", 25, BunType.Ciabatta, ["ham"]));
         }
         private void PopulateDrinksRepository()
         {
-            Menu.Add(1, new Drinks(1, "Cola", 15, "Small"));
+            Menu.Add(69, new Drinks(69, "Cola", 15, "Small"));
         }
 
         public Menuitems AddItem(Menuitems item)

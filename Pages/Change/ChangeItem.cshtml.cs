@@ -10,6 +10,7 @@ namespace mini_big_mammas_pizzaria.Pages.ChangeItem
     public class ChangeItemModel : PageModel
     {
         public Menucard _repo;
+        public int _nytpizzanummer;
 
         public ChangeItemModel(Menucard repo)
         {
