@@ -7,13 +7,22 @@ namespace mini_big_mammas_pizzaria.Pages.Menukort
 {
     public class PizzaMenuModel : PageModel
     {
-        //Property
-        public List<Pizza> PizzaMenukort {  get; set; }
+        //instance field of Pizzarepository 
+        private PizzaRepository _repo;
+
+        //Dependency constructor 
+        public PizzaMenuModel(PizzaRepository repo)
+        {
+            _repo = repo;
+        }
         
+        //property til viewet
+        public List<Pizza> Pizza { get; set; }
+
+
         public void OnGet()
         {
-            PizzaRepository repo = new PizzaRepository();
-            PizzaMenukort = repo.GetAllItems();
+            Pizza = _repo.GetAllItems();
         }
     }
 }
