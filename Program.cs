@@ -26,7 +26,6 @@ internal class Program
         builder.Services.AddRazorPages();
 
         //Indsætter pizzarepository
-        builder.Services.AddSingleton<PizzaRepository>(new PizzaRepository());
         builder.Services.AddSingleton<Menucard>(new Menucard());
         
         var app = builder.Build();

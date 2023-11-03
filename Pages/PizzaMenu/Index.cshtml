@@ -2,6 +2,7 @@
 @using mini_big_mammas_pizzaria.Model;
 @model mini_big_mammas_pizzaria.Pages.Menukort.PizzaMenuModel
 @{
+    
     ViewData["Title"] = "Pizza Menu";
 }
 
@@ -17,10 +18,11 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (Menuitems p in Model.Pizza)
+        
+        @foreach (Items p in Model.Pizza)
         {   
             <tr>
-
+                @* @Pizza p = m as Pizza; *@
                 <td>@p.Number</td>
                 <td>@p.Name</td>
                 @* <td>@p.GetToppings()</td> *@

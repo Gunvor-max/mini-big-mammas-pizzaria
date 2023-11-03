@@ -1,6 +1,6 @@
 ﻿namespace mini_big_mammas_pizzaria.Model
 {
-    public class Drinks:Menuitems
+    public class Drink:Items
     {
         //properties
         
@@ -8,11 +8,11 @@
 
         
         //constructor
-        public Drinks()
+        public Drink()
         {
             Size = "";
         }
-        public Drinks(int number, string name, double price, string size):base(number, name, price)
+        public Drink(string name, double price, string size):base(name, price)
         {
             Size = size;
         }

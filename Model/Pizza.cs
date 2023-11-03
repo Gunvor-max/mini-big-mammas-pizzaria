@@ -2,7 +2,7 @@
 
 namespace mini_big_mammas_pizzaria.Model
 {
-    public class Pizza:Menuitems
+    public class Pizza:Items
     {
         //Properties
 
@@ -14,15 +14,11 @@ namespace mini_big_mammas_pizzaria.Model
         {
         }
         //Constructor
-        public Pizza(int number, string name, double price, List<string>topping):base(number, name, price)
+        public Pizza(string name, double price, List<string>topping):base(name, price)
         {
-            Number = number;
-            Price = price;
-            Name = name;
             Toppings = topping;
             Standard = topping.Count;
         }
-        
         public string AddTopping(string topping)
         {
             Toppings.Add(topping);
@@ -42,7 +38,7 @@ namespace mini_big_mammas_pizzaria.Model
 
         public override string ToString()
         {
-            return $"{{{nameof(Name)}={Name}, {nameof(Number)}={Number.ToString()}, {nameof(Price)}={Price.ToString()}, {nameof(GetToppings)}={GetToppings().ToString()}}}";
+            return $"{{{nameof(Number)}={Number.ToString()}, {nameof(Name)}={Name}, {nameof(Price)}={Price.ToString()}, {nameof(GetToppings)}={GetToppings().ToString()}}}";
         }
 
 

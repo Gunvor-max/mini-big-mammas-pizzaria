@@ -34,7 +34,7 @@ namespace mini_big_mammas_pizzaria.Pages.ChangeItem
 
         public void OnGet(int nummer)
         {
-            Menuitems item = _repo.SearchItem(nummer);
+            Items item = _repo.SearchItem(nummer);
 
             NytPizzaNummer = item.Number;
             
@@ -50,9 +50,9 @@ namespace mini_big_mammas_pizzaria.Pages.ChangeItem
                 Burger b = item as Burger;
                 NyDescription = b.GetToppings();
             }
-            else if (item is Drinks) 
+            else if (item is Drink) 
             {
-                Drinks d = item as Drinks;
+                Drink d = item as Drink;
             }
 
         }
@@ -62,7 +62,7 @@ namespace mini_big_mammas_pizzaria.Pages.ChangeItem
             {
                 return Page();
             }
-            Menuitems item = _repo.SearchItem(NytPizzaNummer);
+            Items item = _repo.SearchItem(NytPizzaNummer);
 
             item.Number = NytPizzaNummer;
             item.Name = NytPizzaNavn;

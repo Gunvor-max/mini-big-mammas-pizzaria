@@ -8,12 +8,13 @@ namespace mini_big_mammas_pizzaria.Pages.BurgerMenu
     public class BurgerMenuModel : PageModel
     {
 
-        public List<Burger> BurgerMenukort { get; set; }
+        public List<Items> BurgerMenukort { get; set; }
 
         public void OnGet()
         {
-            BurgerRepository repo = new BurgerRepository();
-            BurgerMenukort = repo.GetAllItems();
+            Menucard repo = new Menucard();
+            BurgerMenukort = repo.GetAllBurgers();
+            repo.AddNumbers();
         }
     }
 }

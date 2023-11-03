@@ -15,14 +15,13 @@ namespace mini_big_mammas_pizzaria.Pages.Menukort
         {
             _repo = repo;
         }
-        
         //property til viewet
-        public List<Menuitems> Pizza { get; set; }
-
+        public List<Items> Pizza { get; set; }
 
         public void OnGet()
         {
-            Pizza = _repo.GetAllItems();
+            Pizza = _repo.GetAllPizzas();
+            _repo.AddNumbers();
         }
     }
 }
