@@ -8,16 +8,16 @@ namespace mini_big_mammas_pizzaria.Pages.Menukort
     public class PizzaMenuModel : PageModel
     {
         //instance field of Pizzarepository 
-        private PizzaRepository _repo;
+        private Menucard _repo;
 
         //Dependency constructor 
-        public PizzaMenuModel(PizzaRepository repo)
+        public PizzaMenuModel(Menucard repo)
         {
             _repo = repo;
         }
         
         //property til viewet
-        public List<Pizza> Pizza { get; set; }
+        public List<Menuitems> Pizza { get; set; }
 
 
         public void OnGet()

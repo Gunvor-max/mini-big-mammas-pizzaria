@@ -46,17 +46,17 @@ namespace mini_big_mammas_pizzaria.Services
         {
             if (Menukort.ContainsKey(pizza))
             {
-                Pizza slettetpizza = Menukort[pizza]; 
+                Pizza slettetpizza = Menukort[pizza];
                 Menukort.Remove(pizza);
                 return slettetpizza;
             }
             else
-            { 
-                return null; 
+            {
+                return null;
             }
         }
 
-        public Pizza AddItem(Pizza pizza /*int number, string name, double price, List<string> topping*/) 
+        public Pizza AddItem(Pizza pizza /*int number, string name, double price, List<string> topping*/)
         {
             Menukort.Add(pizza.Number, pizza/*number, new Pizza(number, name, price, topping*/);
             return pizza /*Menukort[number]*/;
