@@ -7,8 +7,8 @@
 
 <form method="post">
     <div class="form-group>">
-        <label>Pizza Nummer</label><br />
-        <input class="form-control" asp-for="@Model.NytPizzaNummer" /><br />
+        <label>Pizza Nummer</label>: @Model.NytPizzaNummer<br />
+        <input type="hidden" asp-for="@Model.NytPizzaNummer" /><br />
 
         <label>Pizza Navn</label><br />
         <input class="form-control" asp-for="@Model.NytPizzaNavn" /><br />

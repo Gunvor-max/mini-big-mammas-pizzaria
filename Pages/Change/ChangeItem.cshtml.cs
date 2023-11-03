@@ -23,7 +23,7 @@ namespace mini_big_mammas_pizzaria.Pages.ChangeItem
 
         [BindProperty]
         [Required(ErrorMessage = "Der skal være et navn")]
-        [StringLength(10, MinimumLength = 2, ErrorMessage = "Der skal være mindst to tegn i et navn")]
+        [StringLength(20, MinimumLength = 2, ErrorMessage = "Der skal være mindst to tegn i et navn")]
         public string NytPizzaNavn { get; set; }
 
         [BindProperty]
@@ -36,8 +36,8 @@ namespace mini_big_mammas_pizzaria.Pages.ChangeItem
         {
             Items item = _repo.SearchItem(nummer);
 
+
             NytPizzaNummer = item.Number;
-            
             NytPizzaNavn = item.Name;
             NyPris = item.Price;
             if (item is Pizza)
@@ -64,7 +64,7 @@ namespace mini_big_mammas_pizzaria.Pages.ChangeItem
             }
             Items item = _repo.SearchItem(NytPizzaNummer);
 
-            item.Number = NytPizzaNummer;
+            
             item.Name = NytPizzaNavn;
             item.Price = NyPris;
             //if (item is Pizza)
