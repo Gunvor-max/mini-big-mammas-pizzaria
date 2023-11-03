@@ -46,8 +46,14 @@ namespace mini_big_mammas_pizzaria.Pages.ChangeItem
             else if (item is Burger)
             {
                 Burger b = item as Burger;
-                NyDescription = b.
+                NyDescription = b.Description;
             }
+            else if (item is Drinks) 
+            {
+                Drinks d = item as Drinks;
+
+            }
+
         }
         public IActionResult OnPost()
         {
