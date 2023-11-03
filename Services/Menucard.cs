@@ -131,7 +131,7 @@ namespace mini_big_mammas_pizzaria.Services
 
         public int NextNumber()
         {
-           return Menu.Count + 1;
+           return Menu.Count+1;
         }
 
         public override string ToString()

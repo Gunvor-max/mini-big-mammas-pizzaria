@@ -4,20 +4,20 @@ using System.Security.Cryptography.X509Certificates;
 
 internal class Program
 {
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", options =>
-        {
-            options.Cookie.Name = "MyCookieAuth";
-        });
+    //public void ConfigureServices(IServiceCollection services)
+    //{
+    //    services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", options =>
+    //    {
+    //        options.Cookie.Name = "MyCookieAuth";
+    //    });
 
-        services.AddAuthorization(options =>
-        {
-            services.Add("MustBelongToAdmin",
-               policy => policy.RequireClaim("Pizzaria"));
-        });
+    //    services.AddAuthorization(options =>
+    //    {
+    //        services.Add("MustBelongToAdmin",
+    //           policy => policy.RequireClaim("Pizzaria"));
+    //    });
         
-    }
+    //}
     private static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);

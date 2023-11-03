@@ -33,6 +33,7 @@ namespace mini_big_mammas_pizzaria.Pages.AddNewPizza
 
         public void OnGet()
         {
+            NytPizzaNummer = _repo.NextNumber();
         }
         public IActionResult OnPost()
         {
@@ -43,10 +44,10 @@ namespace mini_big_mammas_pizzaria.Pages.AddNewPizza
             //Menucard nypizza = new Menucard();
             //Pizza pizza = new Pizza();
             Pizza newpizza = new Pizza(NytPizzaNavn, NyPris, [NyDescription]);
-            
+            newpizza.Number = _repo.NextNumber();
             _repo.AddItem(newpizza);
-            _repo.AddNumbers();
-            NytPizzaNummer = newpizza.Number;
+            
+            
 
             return RedirectToPage("/PizzaMenu/Index");
         }
