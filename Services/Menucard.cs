@@ -8,6 +8,7 @@ namespace mini_big_mammas_pizzaria.Services
 
         public Menucard()
         {
+            Menu.Clear();
             PopulatePizzaRepository();
             PopulateBurgerRepository();
             PopulateDrinksRepository();
@@ -16,7 +17,6 @@ namespace mini_big_mammas_pizzaria.Services
 
         public void PopulatePizzaRepository()
         {
-            Menu.Clear();
             Menu.Add(1, new Pizza(1, "Margherita", 69, ["tomato", "cheese"]));
             Menu.Add(2, new Pizza(2, "Vesuvio", 75, ["tomato", "cheese", "ham"]));
             Menu.Add(3, new Pizza(3, "Capricciosa", 80, ["tomato", "cheese", "ham", "mushrooms"]));
@@ -40,7 +40,6 @@ namespace mini_big_mammas_pizzaria.Services
         }
         public void PopulateBurgerRepository()
         {
-            Menu.Clear();
             Menu.Add(21, new Burger(21, "Big Mac", 40, BunType.Ciabatta, ["tomato", "beef"]));
             Menu.Add(23, new Burger(23, "Tasty Cheese", 25, BunType.Ciabatta, ["cheese"]));
             Menu.Add(24, new Burger(24, "Hamburger", 25, BunType.Ciabatta, ["ham"]));
