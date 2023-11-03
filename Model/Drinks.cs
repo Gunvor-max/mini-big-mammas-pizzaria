@@ -24,10 +24,5 @@
     }
 }
 
-/*
- * Drinks drinks1 = new Drinks("Cola", "Small", 15);
- * 
- * 
- * 
- */
+
 

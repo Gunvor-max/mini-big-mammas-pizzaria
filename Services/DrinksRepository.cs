@@ -21,7 +21,7 @@ public class DrinksRepository
     private void PopulateDrinksRepository()
     {
         Menukort.Clear();
-        Menukort.Add(1, new Drinks(1, "Cola", 15, "Small"));
+        Menukort.Add(1, new Drinks(1, "Coca Cola", 15, "Small"));
 
 
 

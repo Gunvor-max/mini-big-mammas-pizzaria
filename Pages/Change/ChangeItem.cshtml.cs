@@ -37,6 +37,7 @@ namespace mini_big_mammas_pizzaria.Pages.ChangeItem
             Menuitems item = _repo.SearchItem(nummer);
 
             NytPizzaNummer = item.Number;
+            
             NytPizzaNavn = item.Name;
             NyPris = item.Price;
             if (item is Pizza)
@@ -63,24 +64,24 @@ namespace mini_big_mammas_pizzaria.Pages.ChangeItem
             }
             Menuitems item = _repo.SearchItem(NytPizzaNummer);
 
-            NytPizzaNummer = item.Number;
-            NytPizzaNavn = item.Name;
-            NyPris = item.Price;
-            if (item is Pizza)
-            {
-                Pizza p = item as Pizza;
-                p.Toppings = NyDescription.Split(",").ToList();
-                NyDescription = p.GetToppings();
-            }
-            else if (item is Burger)
-            {
-                Burger b = item as Burger;
-                NyDescription = b.GetToppings();
-            }
-            else if (item is Drinks)
-            {
-                Drinks d = item as Drinks;
-            }
+            item.Number = NytPizzaNummer;
+            item.Name = NytPizzaNavn;
+            item.Price = NyPris;
+            //if (item is Pizza)
+            //{
+            //    Pizza p = item as Pizza;
+            //    p.Toppings = NyDescription.Split(",").ToList();
+            //    NyDescription = p.GetToppings();
+            //}
+            //else if (item is Burger)
+            //{
+            //    Burger b = item as Burger;
+            //    NyDescription = b.GetToppings();
+            //}
+            //else if (item is Drinks)
+            //{
+            //    Drinks d = item as Drinks;
+            //}
 
             return RedirectToPage("/PizzaMenu/Index");
         }
