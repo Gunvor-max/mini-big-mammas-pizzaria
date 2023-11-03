@@ -39,6 +39,7 @@ namespace mini_big_mammas_pizzaria.Services
             Menukort.Add(17, new Pizza(17, "Romana", 78, ["tomato", "cheese", "ham", "bacon", "onion"]));
             Menukort.Add(18, new Pizza(18, "Sole", 78, ["tomato", "cheese", "ham", "bacon", "eggs"]));
             Menukort.Add(19, new Pizza(19, "Big Mamma", 90, ["tomato", "gorgonzola", "shrimp", "asparagus", "parma ham"]));
+            Menukort.Add(20, new Pizza(20, "Dej i pose", 69, ["Pizzadej"]));
         }
 
         public Pizza DeleteItem(int pizza)
