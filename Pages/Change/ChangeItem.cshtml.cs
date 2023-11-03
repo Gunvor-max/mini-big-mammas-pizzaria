@@ -30,7 +30,7 @@ namespace mini_big_mammas_pizzaria.Pages.ChangeItem
         public double NyPris { get; set; }
 
         [BindProperty]
-        public List<string> NyDescription { get; set; }
+        public string NyDescription { get; set; }
 
         public void OnGet(int nummer)
         {
@@ -42,12 +42,12 @@ namespace mini_big_mammas_pizzaria.Pages.ChangeItem
             if (item is Pizza)
             {
                 Pizza p = item as Pizza;
-                NyDescription = p.Toppings;
+                NyDescription = p.GetToppings();
             }
             else if (item is Burger)
             {
                 Burger b = item as Burger;
-                NyDescription = b.Description;
+                NyDescription = b.GetToppings();
             }
             else if (item is Drinks) 
             {
@@ -69,24 +69,26 @@ namespace mini_big_mammas_pizzaria.Pages.ChangeItem
             if (item is Pizza)
             {
                 Pizza p = item as Pizza;
-                NyDescription = p.Toppings;
+                NyDescription = p.GetToppings();
+                List<string> result = NyDescription.Split(",").ToList();
+                p.Toppings = result;
             }
             else if (item is Burger)
             {
                 Burger b = item as Burger;
-                NyDescription = b.Description;
+                NyDescription = b.GetToppings();
             }
             else if (item is Drinks)
             {
                 Drinks d = item as Drinks;
             }
 
-            return RedirectToPage("Index");
+            return RedirectToPage("/PizzaMenu/Index");
         }
 
         public IActionResult OnPostCancel()
         {
-            return RedirectToPage("Index");
+            return RedirectToPage("/PizzaMenu/Index");
         }
     }
 }
