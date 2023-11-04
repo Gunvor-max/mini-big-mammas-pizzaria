@@ -43,22 +43,30 @@ namespace mini_big_mammas_pizzaria.Pages.AddNewPizza
         
         public IActionResult OnPost()
         {
-            if (!ModelState.IsValid)
+            if (Request.Form["action"] == "TilføjTopping")
             {
-                return Page();
+                NyToppingList.Add(NyDescription);
             }
-            //Menucard nypizza = new Menucard();
-            //Pizza pizza = new Pizza();
 
-            //marco er i gang med at få "tilføj topping" knappen til at virke
-            NyToppingList.Add(NyDescription);
-            Pizza newpizza = new Pizza(NytPizzaNavn, NyPris, NyToppingList);
-            newpizza.Number = _repo.NextNumber();
-            _repo.AddItem(newpizza);
+            if (Request.Form["action"]=="OpretNyPizza")
+            { 
+                if (!ModelState.IsValid)
+                {
+                    return Page();
+                }
+                //Menucard nypizza = new Menucard();
+                //Pizza pizza = new Pizza();
+                NyToppingList.Add(NyDescription);
+                Pizza newpizza = new Pizza(NytPizzaNavn, NyPris, NyToppingList);
+                newpizza.Number = _repo.NextNumber();
+                _repo.AddItem(newpizza);
 
+
+
+                return RedirectToPage("/PizzaMenu/Index");
+            }
             
-
-            return RedirectToPage("/PizzaMenu/Index");
+            return Page();
         }
     }
 }
