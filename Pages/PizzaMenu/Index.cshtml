@@ -19,17 +19,14 @@
     </thead>
     <tbody>
         
-        @foreach (Items p in Model.Pizza)
+        @foreach (Pizza p in Model.Pizza)
         {   
             <tr>
-                @* @Pizza p = m as Pizza; *@
                 <td>@p.Number</td>
                 <td>@p.Name</td>
-                @* <td>@p.GetToppings()</td> *@
-                <td>@p.Price</td>
+                <td>@p.GetToppings()</td>
+                <td>@p.Price Kr.</td>
                 <td><a asp-page="/Change/ChangeItem" asp-route-nummer="@p.Number">Ændre</a></td>
-                
-
             </tr>
         }
     </tbody>

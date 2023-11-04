@@ -18,6 +18,8 @@ namespace mini_big_mammas_pizzaria.Pages.AddNewPizza
 
         [BindProperty]
         public int NytPizzaNummer { get; set; }
+        [BindProperty]
+        public bool ButtonClicked { get; set; }
 
 
         [BindProperty]
@@ -30,11 +32,15 @@ namespace mini_big_mammas_pizzaria.Pages.AddNewPizza
 
         [BindProperty]
         public string NyDescription { get; set; }
+        public List<string> NyToppingList = new List<string>();
+        public string NyToppingString = "";
 
         public void OnGet()
         {
             NytPizzaNummer = _repo.NextNumber();
         }
+
+        
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
@@ -43,10 +49,13 @@ namespace mini_big_mammas_pizzaria.Pages.AddNewPizza
             }
             //Menucard nypizza = new Menucard();
             //Pizza pizza = new Pizza();
-            Pizza newpizza = new Pizza(NytPizzaNavn, NyPris, [NyDescription]);
+
+            //marco er i gang med at få "tilføj topping" knappen til at virke
+            NyToppingList.Add(NyDescription);
+            Pizza newpizza = new Pizza(NytPizzaNavn, NyPris, NyToppingList);
             newpizza.Number = _repo.NextNumber();
             _repo.AddItem(newpizza);
-            
+
             
 
             return RedirectToPage("/PizzaMenu/Index");

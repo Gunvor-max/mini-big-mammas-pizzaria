@@ -31,7 +31,7 @@ namespace mini_big_mammas_pizzaria.Pages.ChangeItem
 
         [BindProperty]
         public string NyDescription { get; set; }
-
+        public List<string> NyToppingList = new List<string>();
         public void OnGet(int nummer)
         {
             Items item = _repo.SearchItem(nummer);
@@ -64,15 +64,15 @@ namespace mini_big_mammas_pizzaria.Pages.ChangeItem
             }
             Items item = _repo.SearchItem(NytPizzaNummer);
 
+            NyToppingList.Add(NyDescription);
             
             item.Name = NytPizzaNavn;
             item.Price = NyPris;
-            //if (item is Pizza)
-            //{
-            //    Pizza p = item as Pizza;
-            //    p.Toppings = NyDescription.Split(",").ToList();
-            //    NyDescription = p.GetToppings();
-            //}
+            if (item is Pizza)
+            {
+                Pizza p = item as Pizza;
+                p.Toppings = NyToppingList;
+            }
             //else if (item is Burger)
             //{
             //    Burger b = item as Burger;

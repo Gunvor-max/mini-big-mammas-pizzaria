@@ -20,15 +20,14 @@
     </thead>
     <tbody>
 
-        @foreach (Items b in Model.BurgerMenukort)
+        @foreach (Burger b in Model.BurgerMenukort)
         {
             <tr>
                 <td>@b.Number</td>
                 <td>@b.Name</td>
-                @* <th>@b.Bun</th>
-                <td>@b.GetToppings()</td> *@
-                <td>@b.Price</td>
-
+                <th>@b.Bun</th>
+                <td>@b.GetToppings()</td>
+                <td>@b.Price Kr.</td>
             </tr>
         }
     </tbody>

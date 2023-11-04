@@ -17,11 +17,11 @@
     </thead>
     <tbody>
 
-        @foreach (Items b in Model.DrinksMenukort)
+        @foreach (Drink d in Model.DrinksMenukort)
         {
             <tr>
-                <td>@b.Name</td>
-                <td>@b.Price</td>
+                <td>@d.Name</td>
+                <td>@d.Price Kr.</td>
 
             </tr>
         }
