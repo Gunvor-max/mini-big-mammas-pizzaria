@@ -89,9 +89,12 @@ namespace mini_big_mammas_pizzaria.Services
             List<Items> menu = new List<Items>();
             for (int i = 1; i <= Menu.Count; i++)
             {
-                if (Menu[i] is Pizza)
+                if (Menu.ContainsKey(i))
                 {
-                    menu.Add(Menu[i]);
+                    if (Menu[i] is Pizza)
+                    {
+                        menu.Add(Menu[i]);
+                    }
                 }
             }
             return menu;
@@ -101,9 +104,12 @@ namespace mini_big_mammas_pizzaria.Services
             List<Items> menu = new List<Items>();
             for (int i = 1; i <= Menu.Count; i++)
             {
-                if (Menu[i] is Burger)
+                if (Menu.ContainsKey(i))
                 {
-                    menu.Add(Menu[i]);
+                    if (Menu[i] is Burger)
+                    {
+                        menu.Add(Menu[i]);
+                    }
                 }
             }
             return menu;
@@ -113,9 +119,12 @@ namespace mini_big_mammas_pizzaria.Services
             List<Items> menu = new List<Items>();
             for (int i = 1; i <= Menu.Count; i++)
             {
-                if (Menu[i] is Drink)
+                if (Menu.ContainsKey(i))
                 {
-                    menu.Add(Menu[i]);
+                    if (Menu[i] is Drink)
+                    {
+                        menu.Add(Menu[i]);
+                    }
                 }
             }
             return menu;
@@ -125,7 +134,11 @@ namespace mini_big_mammas_pizzaria.Services
         {
             for (int i = 1; i <= Menu.Count; i++)
             {
-                Menu[i].Number = i;
+                if (Menu.ContainsKey(i))
+                {
+                    Menu[i].Number = i;
+                }
+                
             }
         }
 
@@ -134,6 +147,20 @@ namespace mini_big_mammas_pizzaria.Services
            return Menu.Count+1;
         }
 
+        //public void CheckMenu()
+        //{
+        //    for(int i = 1; i <= Menu.Count;)
+        //    {
+        //        if (!Menu.ContainsKey(i))
+        //        {
+        //             Menu.Add(i, Menu[i + 1]);
+        //        }
+        //        else
+        //        {
+        //            i++;
+        //        }
+        //    }
+        //}
         public override string ToString()
         {
             string Output = string.Join(", ", Menu.Values);
